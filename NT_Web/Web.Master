@@ -1,0 +1,252 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="WebApplication1.Web" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link class="TopmenuFont" href="#" rel="stylesheet" type="text/css" />
+    <link class="TextFont" href="#" rel="stylesheet" type="text/css" />
+    <link class="TitleFont" href="#" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.useso.com/css?family=Lato:300,400,700,400italic|Droid+Sans|PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="javascript/jquery-latest.js"></script>
+    <script type="text/javascript" src="javascript/red-sky-options.js"></script>
+    <script type="text/javascript" src="shortcodes/shortcodes.js"></script>
+    <script type="text/javascript" src="javascript/jquery.prettyPhoto.js"></script>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS -->
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="shortcodes/shortcodes.css" rel="stylesheet" type="text/css">
+    <link href="css/prettyPhoto.css" rel="stylesheet" type="text/css">
+
+    <!-- START SETTINGS BOX -->
+    <script type="text/javascript" src="settingsbox/farbtastic/farbtastic.js"></script>
+    <script type="text/javascript" src="settingsbox/settingsbox.js"></script>
+    <link href="settingsbox/settingsbox.css" rel="stylesheet" type="text/css">
+    <link href="settingsbox/farbtastic/farbtastic.css" rel="stylesheet" type="text/css">
+    <!-- END SETTINGS BOX -->
+
+    <title>国家宝藏</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+  
+    <!-- 网站左端呼出样式设置 -->
+    <div class="customPanel customPanelClosed">
+        <div class="customPanelOptions">
+            <h1>设置样式</h1>
+            网站颜色<br />
+            <div class="customPanelOptionsPickerButton customPanelOptionsPickerButtonSite"></div>
+            <div style="clear: both;"></div>
+            <div style="height: 10px"></div>
+            背景颜色<br />
+            <div style="clear: both;"></div>
+            <div class="customPanelOptionsDefault">Default</div>
+            <div style="clear: both;"></div>
+            <div style="height: 10px"></div>
+            颜色:<br />
+            <div style="clear: both;"></div>
+            <div class="customPanelOptionsColor bodycolor01"></div>
+            <div class="customPanelOptionsColor bodycolor02"></div>
+            <div class="customPanelOptionsColor bodycolor03"></div>
+            <div class="customPanelOptionsColor bodycolor04"></div>
+            <div class="customPanelOptionsColor bodycolor06"></div>
+            <div class="customPanelOptionsColor bodycolor07"></div>
+            <div class="customPanelOptionsColor bodycolor08"></div>
+            <div class="customPanelOptionsColor bodycolor09"></div>
+            <div class="customPanelOptionsColor bodycolor10"></div>
+            <div class="customPanelOptionsPickerButton customPanelOptionsPickerButtonBackground"></div>
+            <div style="clear: both;"></div>
+            背景纹理<br />
+            <div style="clear: both;"></div>
+            <div class="customPanelOptionsTexture bodytexture01 bodytexturePreview"></div>
+            <div class="customPanelOptionsTexture bodytexture02 bodytexturePreview"></div>
+            <div class="customPanelOptionsTexture bodytexture03 bodytexturePreview"></div>
+            <div class="customPanelOptionsTexture bodytexture04 bodytexturePreview"></div>
+            <div class="customPanelOptionsTexture bodytexture05 bodytexturePreview"></div>
+            <div class="customPanelOptionsTexture bodytexture06 bodytexturePreview"></div>
+            <div class="customPanelOptionsTexture bodytexture07 bodytexturePreview"></div>
+            <div class="customPanelOptionsTexture bodytexture08 bodytexturePreview"></div>
+            <div class="customPanelOptionsTexture bodytexture09 bodytexturePreview"></div>
+            <div class="customPanelOptionsTexture bodytexture10 bodytexturePreview"></div>
+            <div style="clear: both;"></div>
+            <br />
+            菜单字体:
+    <select name="menu-font" size="1">
+    </select>
+            <br />
+            标题字体:
+    <select name="title-font" size="1">
+    </select>
+            <br />
+            文本字体:
+    <select name="text-font" size="1">
+    </select>
+        </div>
+        <div class="customPanelOptionsPicker customPanelOptionsPickerBackground"></div>
+        <div class="customPanelOptionsPicker customPanelOptionsPickerSite"></div>
+        <div class="customPanelButton"></div>
+    </div>
+    <!--  -->
+
+    <!-- 顶端呼出-->
+    <div id="topline">
+        <div class="container">
+            <div class="opentop">+</div>
+            <div class="content">
+                <div class="columns two">
+                    <div class="search">
+                        <form>
+                            <input class="searchline" name="search" value="国家宝藏" onblur="if(this.value=='') this.value=''" onfocus="if(this.value =='enter keywords' ) this.value=''" />
+                            <input class="searchbutton" name="search" type="submit" value=""/>
+                             
+                        </form>
+                    </div>
+                </div>
+                <div class="columns two_last">
+                    <ul class="social">
+                         
+                        <asp:Panel ID="PanelUserInfo" runat="server">
+                            <li>欢迎您，</li>
+                            <li><a href="User_Index.aspx">
+                                <asp:Image ID="img" runat="server"  CssClass="img-circle" Height="22px" Width="22px" />
+                                <asp:Label ID="UserName" runat="server" Text="" ForeColor="#3399ff"></asp:Label></a>
+                            </li>
+                            <li>
+                              <asp:HyperLink ID="HyperLink1" runat="server" Font-Names="微软雅黑"  Font-Size="8" NavigateUrl='Login.aspx' ForeColor="#3399ff" Font-Underline="false" Text="退出" onmouseover="this.style.textDecoration='underline';this.style.color='steelblue';" onmouseout="this.style.textDecoration='none';this.style.color='#2b2b2b'"></asp:HyperLink>
+                            </li>
+                        </asp:Panel>
+                        <asp:Panel ID="PanelLogin" runat="server">
+                            <li>
+                                <a href="Login.aspx">
+                                    <asp:Label ID="Label1" runat="server" Text="登录" ForeColor="#3399ff"></asp:Label></a></li>
+                            丨
+                            <li><a href="Register.aspx">
+                                <asp:Label ID="Label2" runat="server" Text="注册" ForeColor="#3399ff"></asp:Label></a>
+                            </li>
+                        </asp:Panel>
+                              
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!--主要页面  -->
+    <div id="box">
+        <div class="container">
+            <!-- 导航区-->
+            <div id="header">
+                <!-- logo-->
+                <div class="one-third columns">
+                    <div class="logo"><a href="Index.aspx"><span>国家</span>宝藏</a></div>
+                </div>
+                <!-- 导航菜单-->
+                <div class="two-thirds_last columns">
+                    <form action="http://wp.red-sky.pl/">
+                        <select class="navigationmicro" name="myDestination" onchange="this.form.window_name.value++; ob=this.form.myDestination; window.open(ob.options[ob.selectedIndex].value,'Window_Name'+this.form.window_name.value)">
+                            <option value="Index.aspx">- 首页 -</option>
+                            <option value="Cull_Index.aspx">文物宝鉴</option>
+                             <option value="Cull_Class.aspx?dynid=dyn">- 朝代</option>
+                            <option value="Cull_Class.aspx?classid=leibie">- 类别</option>
+                            <option value="ACG_Index.aspx">ACG&文物</option>
+                            <%-- <option value="ACG_Top.aspx">每周TOP</option>--%>
+                            <option value="ACG_Class.aspx?acgclass=视频">- 视频</option>
+                            <option value="ACG_Class.aspx?acgclass=漫画">- 漫画</option>
+                            <option value="ACG_Class.aspx?acgclass=插画">- 插画</option>
+                            <option value="News_Index.aspx">前世今生</option>
+                            <option value="User_Index.aspx">个人中心</option>
+                        </select>
+                        <input name="window_name" style="display: none;" type="hidden" value="1">
+                    </form>
+                    <ul class="topmenu">
+                        <li class="active"><a class="active" href="Index.aspx">首页</a></li>
+                        <li><a href="ACG_Index.aspx">ACG&文物</a>
+                            <ul class="MenuDropdown">
+                                <li><a href="ACG_Class.aspx?acgclass=视频">视频</a></li>
+                                <li><a href="ACG_Class.aspx?acgclass=漫画">漫画</a></li>
+                                <li><a href="ACG_Class.aspx?acgclass=插画">插画</a></li>
+                            </ul>
+                        </li>
+                       <%-- <li ><a href="ACG_Top.aspx" style="color:red">Top</a></li>--%>
+                        <li><a href="Cull_Index.aspx">文物宝鉴</a>
+                            <ul class="MenuDropdown">
+                                <li><a href="Cull_Class.aspx?dynid=dyn">朝代</a></li>
+                                <li><a href="Cull_Class.aspx?classid=leibie">类别</a></li>
+                            </ul>
+                       </li>
+                        <li><a href="News_Index.aspx">前世今生</a>
+
+                        </li>
+                    <li><a href="User_Index.aspx">个人中心</a></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!--  -->
+
+            <!--内容-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div id="footer">
+        <div class="container">
+            <div class="columns three">
+                <h2>关于 <span>国家</span>宝藏</h2>
+                <p>希望能通过线上的宣传让更多人了解国家的文物与历史，同时希望更多的年轻人参与到保护传统文化和以传统文化为基础的新时代流行文化的创作中来，提升民族自豪感和文化自信！ </p>
+                 <p></p>
+                   
+            </div>
+            <div class="columns three">
+                <h2>相关链接</h2>
+                <ul>
+                        <li><a href="http://hs.blizzard.cn/home" target="_blank">江西省博物馆</a></li>
+                        <li><a href="http://cha.17173.com/hs/" target="_blank">故宫博物馆</a></li>
+                        <li><a href="http://lushi.163.com/" target="_blank">南京博物院</a></li>
+                        <li><a href="http://ls.duowan.com/" target="_blank">上海博物馆</a></li>
+                       
+                    </ul>
+            </div>
+            <div class="columns three_last">
+                <h2>小组成员：</h2>
+                 <p>黎志峰</p>
+                    <p>李银海</p>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+
+    <!--尾部导航 -->
+    <div id="bottomarea">
+        <div class="container">
+            <div class="columns two">
+                <ul class="bottommenu">
+                    <li><a href="Index.aspx">主页</a></li>
+                    <li><a href="ACG_Index.aspx">ACG</a></li>
+                    <li><a href="Cull_Index.aspx">文物宝鉴</a></li>
+                    <li><a href="News_Index.aspx">前世今生</a></li>
+                    <li><a href="User_Index.aspx">个人中心</a></li>
+                    <li><a href="User_Index.aspx">管理员入口</a></li>
+                </ul>
+            </div>
+            <div class="columns two_last">
+         
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+ 
+    <!--  -->
+</body>
+</html>
